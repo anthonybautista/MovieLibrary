@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "qnAqjM03rMi2QxSYjHlE8H8oQu6t0gKG/9/exqOA5Knl5D7XrDHhjMIMPQl5i+JfTbH7KVf3sOcMBCjA+VteYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0-preview.1.22076.8\\microsoft.extensions.configuration.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0-preview.1.22076.8\\microsoft.extensions.configuration.abstractions.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.0-preview.1.22076.8\\microsoft.extensions.configuration.binder.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0-preview.1.22076.8\\microsoft.extensions.dependencyinjection.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0-preview.1.22076.8\\microsoft.extensions.dependencyinjection.abstractions.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0-preview.1.22076.8\\microsoft.extensions.logging.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0-preview.1.22076.8\\microsoft.extensions.logging.abstractions.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.logging.configuration\\7.0.0-preview.1.22076.8\\microsoft.extensions.logging.configuration.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.logging.console\\7.0.0-preview.1.22076.8\\microsoft.extensions.logging.console.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.options\\7.0.0-preview.1.22076.8\\microsoft.extensions.options.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0-preview.1.22076.8\\microsoft.extensions.options.configurationextensions.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0-preview.1.22076.8\\microsoft.extensions.primitives.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0-preview.1.22076.8\\system.diagnostics.diagnosticsource.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\7.0.0-preview.1.22076.8\\system.runtime.compilerservices.unsafe.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\system.text.encodings.web\\7.0.0-preview.1.22076.8\\system.text.encodings.web.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\system.text.json\\7.0.0-preview.1.22076.8\\system.text.json.7.0.0-preview.1.22076.8.nupkg.sha512"
+  ],
+  "logs": []
+}
