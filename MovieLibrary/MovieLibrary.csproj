@@ -17,6 +17,14 @@
       <EmbeddedResource Include="movies.csv">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>
+      <None Remove="shows.csv" />
+      <EmbeddedResource Include="shows.csv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="videos.csv" />
+      <EmbeddedResource Include="videos.csv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

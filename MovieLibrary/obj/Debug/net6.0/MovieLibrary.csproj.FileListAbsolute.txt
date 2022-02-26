@@ -32,3 +32,5 @@ C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\obj\Debug\net6.0\ref\MovieLi
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\obj\Debug\net6.0\MovieLibrary.pdb
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\obj\Debug\net6.0\MovieLibrary.genruntimeconfig.cache
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\movies.csv
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\shows.csv
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\videos.csv
