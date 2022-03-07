@@ -10,6 +10,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0-preview.1.22076.8" />
       <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0-preview.1.22076.8" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +24,18 @@
       </EmbeddedResource>
       <None Remove="videos.csv" />
       <EmbeddedResource Include="videos.csv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="videoJson.txt" />
+      <EmbeddedResource Include="videosJson.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="showsJson.txt" />
+      <EmbeddedResource Include="showsJson.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="moviesJson.txt" />
+      <EmbeddedResource Include="moviesJson.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

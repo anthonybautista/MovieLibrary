@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qnAqjM03rMi2QxSYjHlE8H8oQu6t0gKG/9/exqOA5Knl5D7XrDHhjMIMPQl5i+JfTbH7KVf3sOcMBCjA+VteYg==",
+  "dgSpecHash": "HM7K9DRE7ymEaYCSxJ9jIuY60MBYT8FzcQoJ7muhozJPG2umzjxGJm8vs72Nx3SHUEKiclV8r72Yo+WvlHD6aA==",
   "success": true,
   "projectFilePath": "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.options\\7.0.0-preview.1.22076.8\\microsoft.extensions.options.7.0.0-preview.1.22076.8.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0-preview.1.22076.8\\microsoft.extensions.options.configurationextensions.7.0.0-preview.1.22076.8.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0-preview.1.22076.8\\microsoft.extensions.primitives.7.0.0-preview.1.22076.8.nupkg.sha512",
+    "C:\\Users\\antho\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0-preview.1.22076.8\\system.diagnostics.diagnosticsource.7.0.0-preview.1.22076.8.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\7.0.0-preview.1.22076.8\\system.runtime.compilerservices.unsafe.7.0.0-preview.1.22076.8.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\system.text.encodings.web\\7.0.0-preview.1.22076.8\\system.text.encodings.web.7.0.0-preview.1.22076.8.nupkg.sha512",

@@ -6,7 +6,7 @@ namespace MovieLibrary.Models
     {
         public int Season;
         public int Episode;
-        private string[] Writers;
+        public string[] Writers;
 
         // Create a class constructor for the Car class
         public Show(int id, string t, int s, int e, string[] w)

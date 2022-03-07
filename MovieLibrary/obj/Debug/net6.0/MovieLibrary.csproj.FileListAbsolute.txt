@@ -34,3 +34,7 @@ C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\obj\Debug\net6.0\MovieLibrar
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\movies.csv
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\shows.csv
 C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\videos.csv
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\showsJson.txt
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\moviesJson.txt
+C:\Users\antho\Desktop\cs\MovieLibrary\MovieLibrary\bin\Debug\net6.0\videosJson.txt

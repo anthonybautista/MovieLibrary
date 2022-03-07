@@ -6,7 +6,7 @@ namespace MovieLibrary.Models
     {
         public string Format;
         public int Length;
-        private int[] Regions;
+        public int[] Regions;
 
         // Create a class constructor for the Car class
         public Video(int id, string t, string f, int l, int[] r)
