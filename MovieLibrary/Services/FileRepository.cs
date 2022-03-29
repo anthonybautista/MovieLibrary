@@ -441,5 +441,10 @@ namespace MovieLibrary.Services
                 media.Display();
             }
         }
+
+        public void Search(string searchString)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

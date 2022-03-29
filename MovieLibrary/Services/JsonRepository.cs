@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MovieLibrary.Models;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace MovieLibrary.Services
 {
@@ -338,5 +339,6 @@ namespace MovieLibrary.Services
                 media.Display();
             }
         }
+        
     }
 }

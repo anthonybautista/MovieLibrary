@@ -14,6 +14,7 @@ namespace MovieLibrary.Services
     public class MainService : IMainService
     {
         private readonly IRepository _fileService;
+        private DataContext context = new();
 
         public MainService(IRepository fileService)
         {
@@ -48,10 +49,16 @@ namespace MovieLibrary.Services
                     logger.Log(LogLevel.Information, $"User selected {entry}");
                     loggerFactory.Dispose();
 
-                    if (entry == 3)
+                    if (entry == 4)
                     {
                         more = false;
                     }
+                    else if (entry == 3)
+                    {
+                        Console.Write("Enter a word to search: ");
+                        string searchString = Console.ReadLine();
+                        context.SearchAll(searchString);
+                    } 
                     else
                     {
                         PrintMediaMenu();
@@ -114,7 +121,8 @@ namespace MovieLibrary.Services
                 Console.WriteLine("Movie Library\n" +
                                   "1. Add Media\n" +
                                   "2. Display Media\n" +
-                                  "3. Exit\n");
+                                  "3. Search\n" +
+                                  "4. Exit\n");
                 Console.Write("Select an option: ");
             }
             

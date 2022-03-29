@@ -1,3 +1,4 @@
 {"ID": 1, "Title": "Toy Story (1995)", "Genres": ["Adventure","Animation","Children","Comedy","Fantasy"]}
 {"ID": 2, "Title": "Jumanji (1995)", "Genres": ["Adventure","Children","Fantasy"]}
 {"ID": 3, "Title": "Grumpier Old Men (1995)", "Genres": ["Comedy"]}
+{"ID": 4, "Title": "My Movie (1995)", "Genres": ["Comedy"]}
