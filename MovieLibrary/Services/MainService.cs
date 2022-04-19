@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MovieLibrary.Context;
 using MovieLibrary.Models;
 
 namespace MovieLibrary.Services
@@ -13,12 +15,17 @@ namespace MovieLibrary.Services
     /// </summary>
     public class MainService : IMainService
     {
-        private readonly IRepository _fileService;
-        private DataContext context = new();
+        //private readonly IRepository _fileService;
+        private readonly IController _dbService;
 
-        public MainService(IRepository fileService)
+      /*  public MainService(IRepository fileService)
         {
             _fileService = fileService;
+        } */
+        
+        public MainService(IController dbService)
+        {
+            _dbService = dbService;
         }
 
         public void Invoke()
@@ -30,13 +37,7 @@ namespace MovieLibrary.Services
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
             var logger = loggerFactory.CreateLogger<Program>();
 
-            string movieFile = "moviesJson.txt";
-            string showFile = "showsJson.txt";
-            string videoFile = "videosJson.txt";
             bool more = true;
-            List<Media> movies = _fileService.GetAll("movie", movieFile);
-            List<Media> shows = _fileService.GetAll("show", showFile);
-            List<Media> videos = _fileService.GetAll("video", videoFile);
 
             try
             {
@@ -49,61 +50,36 @@ namespace MovieLibrary.Services
                     logger.Log(LogLevel.Information, $"User selected {entry}");
                     loggerFactory.Dispose();
 
-                    if (entry == 4)
+                    if (entry == 5)
                     {
                         more = false;
                     }
-                    else if (entry == 3)
+                    else if (entry == 4)
                     {
                         Console.Write("Enter a word to search: ");
                         string searchString = Console.ReadLine();
-                        context.SearchAll(searchString);
+                        _dbService.Search(searchString);
+
                     } 
+                    else if (entry == 3)
+                    {
+                        Console.Write("Enter a Movie ID to delete: ");
+                        int movieID = Convert.ToInt32(Console.ReadLine());
+                        _dbService.Delete(movieID);
+                    }
+                    else if (entry == 2)
+                    {
+                        Console.Write("Enter a Movie ID to update: ");
+                        int movieID = Convert.ToInt32(Console.ReadLine());
+                        _dbService.Update(movieID);
+                    }
+                    else if (entry == 1)
+                    {
+                        _dbService.Add();
+                    }
                     else
                     {
-                        PrintMediaMenu();
-                        int mediaSelection = 0;
-                        mediaSelection = Convert.ToInt32(Console.ReadLine());
-
-                        logger.Log(LogLevel.Information, $"User selected {mediaSelection}");
-                        loggerFactory.Dispose();
-
-                        if (entry == 1)
-                        {
-                            switch (mediaSelection)
-                            {
-                                case 1:
-                                    movies = _fileService.Add("movie",movieFile, movies);
-                                    break;
-                                case 2:
-                                    shows = _fileService.Add("show", showFile, shows);;
-                                    break;
-                                case 3:
-                                    videos = _fileService.Add("video",videoFile, videos);;
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid Entry!");
-                                    break;
-                            }
-                        }
-                        else
-                        {
-                            switch (mediaSelection)
-                            {
-                                case 1:
-                                    _fileService.DisplayAll(movies);
-                                    break;
-                                case 2:
-                                    _fileService.DisplayAll(shows);
-                                    break;
-                                case 3:
-                                    _fileService.DisplayAll(videos);
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid Entry!");
-                                    break;
-                            }
-                        }
+                        Console.WriteLine("Invalid Selection.");
                     }
 
                 } while (more);
@@ -119,22 +95,14 @@ namespace MovieLibrary.Services
             {
                 Console.WriteLine();
                 Console.WriteLine("Movie Library\n" +
-                                  "1. Add Media\n" +
-                                  "2. Display Media\n" +
-                                  "3. Search\n" +
-                                  "4. Exit\n");
+                                  "1. Add Movie\n" +
+                                  "2. Update Movie\n" +
+                                  "3. Delete Movie\n" +
+                                  "4. Search\n" +
+                                  "5. Exit\n");
                 Console.Write("Select an option: ");
             }
             
-            static void PrintMediaMenu()
-            {
-                Console.WriteLine();
-                Console.WriteLine("Select Media Type\n" +
-                                  "1. Movie\n" +
-                                  "2. Show\n" +
-                                  "3. Video\n");
-                Console.Write("Select an option: ");
-            }
         }
     }
 }

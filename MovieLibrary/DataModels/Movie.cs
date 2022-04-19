@@ -12,5 +12,6 @@ namespace MovieLibrary.DataModels
         
         public virtual ICollection<MovieGenre> MovieGenres {get;set;}
         public virtual ICollection<UserMovie> UserMovies {get;set;}
+        
     }
 }
