@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MovieLibrary.Context;
 using MovieLibrary.Models;
+using NLog;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace MovieLibrary.Services
 {
@@ -17,25 +19,22 @@ namespace MovieLibrary.Services
     {
         //private readonly IRepository _fileService;
         private readonly IController _dbService;
+        private readonly IMenu _menu;
+        private Logger logger = LogManager.GetCurrentClassLogger();
 
       /*  public MainService(IRepository fileService)
         {
             _fileService = fileService;
         } */
         
-        public MainService(IController dbService)
+        public MainService(IController dbService, IMenu programMenus)
         {
             _dbService = dbService;
+            _menu = programMenus;
         }
 
         public void Invoke()
         {
-            IServiceCollection serviceCollection = new ServiceCollection();
-            var serviceProvider = serviceCollection
-                .AddLogging(x => x.AddConsole())
-                .BuildServiceProvider();
-            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-            var logger = loggerFactory.CreateLogger<Program>();
 
             bool more = true;
 
@@ -44,15 +43,68 @@ namespace MovieLibrary.Services
                 do
                 {
                     int entry = 0;
-                    PrintMenu();
-                    entry = Convert.ToInt32(Console.ReadLine());
-                    
-                    logger.Log(LogLevel.Information, $"User selected {entry}");
-                    loggerFactory.Dispose();
+                    _menu.MainMenu();
+                    try
+                    {
+                        entry = Convert.ToInt32(Console.ReadLine());
+                        logger.Info($"User selected {entry}");
+                    }
+                    catch (Exception e)
+                    {
+                        logger.Info(e.ToString());
+                    }
 
-                    if (entry == 5)
+                    if (entry == 7)
                     {
                         more = false;
+                    } 
+                    else if (entry == 6)
+                    {
+                        bool moreTwo = true;
+                        do 
+                        {
+                            _menu.UserMenu();
+                            try
+                            {
+                                entry = Convert.ToInt32(Console.ReadLine());
+                                logger.Info($"User selected {entry}");
+                            }
+                            catch (Exception e)
+                            {
+                                logger.Info(e.ToString());
+                            }
+        
+                            if (entry == 4)
+                            {
+                                moreTwo = false;
+                            }
+                            else if (entry == 3)
+                            {
+                                _dbService.TopByOccupation();
+                            }
+                            else if (entry == 2)
+                            {
+                                Console.Write("Enter a User ID: ");
+                                int userID = Convert.ToInt32(Console.ReadLine());
+                                Console.Write("Enter a Movie ID to rate: ");
+                                int movieID = Convert.ToInt32(Console.ReadLine());
+                                _dbService.AddReview(userID, movieID);
+        
+                            } 
+                            else if (entry == 1)
+                            {
+                                _dbService.AddUser();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Selection.");
+                            }
+        
+                        } while (moreTwo);
+                    }
+                    else if (entry == 5)
+                    {
+                        _dbService.DisplayAll();
                     }
                     else if (entry == 4)
                     {
@@ -86,21 +138,7 @@ namespace MovieLibrary.Services
             }
             catch (Exception ex)
             {
-                logger.Log(LogLevel.Information, ex.ToString());
-                loggerFactory.Dispose();
-            }
-
-
-            static void PrintMenu()
-            {
-                Console.WriteLine();
-                Console.WriteLine("Movie Library\n" +
-                                  "1. Add Movie\n" +
-                                  "2. Update Movie\n" +
-                                  "3. Delete Movie\n" +
-                                  "4. Search\n" +
-                                  "5. Exit\n");
-                Console.Write("Select an option: ");
+                logger.Info(ex.ToString());
             }
             
         }

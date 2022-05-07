@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MovieLibrary.DataModels
 {
     public class MovieGenre
-    {
-    public int Id {get;set;}
-    public virtual Movie Movie { get; set; }
-    public virtual Genre Genre { get; set; }
+    { 
+        public int Id {get;set;}
+        public virtual Movie Movie { get; set; }
+        public virtual Genre Genre { get; set; }
     }
 }

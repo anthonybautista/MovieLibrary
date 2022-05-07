@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieLibrary.Context;
 
+#nullable disable
+
 namespace MovieLibrary.Migrations
 {
     [DbContext(typeof(MovieContext))]
@@ -15,54 +17,62 @@ namespace MovieLibrary.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "7.0.0-preview.1.22076.6")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.Genre", b =>
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("MovieLibrary.DataModels.Genre", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.Movie", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.Movie", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.MovieGenre", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.MovieGenre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
-                    b.Property<long?>("GenreId")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<long>("GenreId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("MovieId")
+                    b.Property<long>("MovieId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -74,38 +84,44 @@ namespace MovieLibrary.Migrations
                     b.ToTable("MovieGenres");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.Occupation", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.Occupation", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Occupations");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.User", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<long>("Age")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("OccupationId")
+                    b.Property<long>("OccupationId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("ZipCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -115,14 +131,15 @@ namespace MovieLibrary.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.UserMovie", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.UserMovie", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
 
-                    b.Property<long?>("MovieId")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<long>("MovieId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("RatedAt")
@@ -131,7 +148,7 @@ namespace MovieLibrary.Migrations
                     b.Property<long>("Rating")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("UserId")
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -143,58 +160,68 @@ namespace MovieLibrary.Migrations
                     b.ToTable("UserMovies");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.MovieGenre", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.MovieGenre", b =>
                 {
-                    b.HasOne("MovieLibraryOO.DataModels.Genre", "Genre")
+                    b.HasOne("MovieLibrary.DataModels.Genre", "Genre")
                         .WithMany("MovieGenres")
-                        .HasForeignKey("GenreId");
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("MovieLibraryOO.DataModels.Movie", "Movie")
+                    b.HasOne("MovieLibrary.DataModels.Movie", "Movie")
                         .WithMany("MovieGenres")
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Genre");
 
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.User", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.User", b =>
                 {
-                    b.HasOne("MovieLibraryOO.DataModels.Occupation", "Occupation")
+                    b.HasOne("MovieLibrary.DataModels.Occupation", "Occupation")
                         .WithMany()
-                        .HasForeignKey("OccupationId");
+                        .HasForeignKey("OccupationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Occupation");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.UserMovie", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.UserMovie", b =>
                 {
-                    b.HasOne("MovieLibraryOO.DataModels.Movie", "Movie")
+                    b.HasOne("MovieLibrary.DataModels.Movie", "Movie")
                         .WithMany("UserMovies")
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("MovieLibraryOO.DataModels.User", "User")
+                    b.HasOne("MovieLibrary.DataModels.User", "User")
                         .WithMany("UserMovies")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Movie");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.Genre", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.Genre", b =>
                 {
                     b.Navigation("MovieGenres");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.Movie", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.Movie", b =>
                 {
                     b.Navigation("MovieGenres");
 
                     b.Navigation("UserMovies");
                 });
 
-            modelBuilder.Entity("MovieLibraryOO.DataModels.User", b =>
+            modelBuilder.Entity("MovieLibrary.DataModels.User", b =>
                 {
                     b.Navigation("UserMovies");
                 });

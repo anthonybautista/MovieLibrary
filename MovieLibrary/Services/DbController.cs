@@ -4,11 +4,159 @@ using MovieLibrary.DataModels;
 using MovieLibrary.Context;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace MovieLibrary.Services
 {
     public class DbController : IController
     {
+
+        private Logger log = LogManager.GetCurrentClassLogger();
+        public void DisplayAll()
+        {
+
+            using (var db = new MovieContext())
+            {
+                var movies = db.Movies.Select(movie => movie).Include("MovieGenres.Genre").ToList();
+
+                foreach (var movie in movies)
+                {
+                    Console.WriteLine("Movie ID: " + movie.Id);
+                    Console.WriteLine("Title: " + movie.Title);
+                    Console.WriteLine("Released: " + movie.ReleaseDate);
+                    string g = "Genres: ";
+                    int i = 1;
+
+                    foreach (var genre in movie.MovieGenres)
+                    {
+                        if (i == 1)
+                        {
+                            g = g + genre.Genre.Name;
+                        }
+                        else
+                        {
+                            g = g + ", " + genre.Genre.Name;
+                        }
+
+                        i++;
+                    }
+
+                    Console.WriteLine(g);
+                }
+            }
+
+        }
+
+        public void AddUser()
+        {
+            using (var db = new MovieContext())
+            {
+                User user = new();
+                DbMenu m = new();
+
+                user.Age = m.AgePrompt();
+                user.Gender = m.GenderPrompt();
+                user.ZipCode = m.ZipPrompt();
+                
+                string occupation = m.OccupationPrompt();
+                
+                var occupationMatch = db.Occupations.FirstOrDefault(x => x.Name.ToLower() == occupation.ToLower());
+                if (occupationMatch == null)
+                {
+                    Occupation o = new();
+                    o.Name = occupation;
+                    db.Occupations.Add(o);
+                    user.Occupation = o;
+                }
+                else
+                {
+                    user.Occupation = occupationMatch;
+                }
+
+                bool confirm = m.AddUserConfirm(user);
+
+                if (confirm)
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    log.Info("User Added, ID# " + user.Id);
+                }
+            }
+        }
+
+        public void AddReview(int userID, int movieID)
+        {
+            using (var db = new MovieContext())
+            {
+                var user = db.Users.FirstOrDefault(x => x.Id == userID);
+                var movie = db.Movies.FirstOrDefault(x => x.Id == movieID);
+
+                UserMovie review = new();
+                DbMenu m = new();
+
+                review.Rating = m.RatingPrompt();
+                review.RatedAt = DateTime.Now;
+                review.Movie = movie;
+                review.User = user;
+                
+                bool confirm = m.AddReviewConfirm(review);
+
+                if (confirm)
+                {
+                    db.UserMovies.Add(review);
+                    db.SaveChanges();
+                    log.Info("Review Added For: " + review.Movie.Title);
+                }
+            }
+        }
+
+        public void TopByOccupation()
+        {
+            using (var db = new MovieContext())
+            {
+                var occupations = db.Occupations.Select(occ => occ)
+                                               .OrderBy(occ => occ.Name).ToList();
+
+                foreach (var occupation in occupations)
+                {
+                    bool valid = true;
+                    UserMovie topRated = new UserMovie();
+                    try
+                    {
+                        topRated = db.UserMovies.Where(um => um.User.Occupation == occupation)
+                            .OrderByDescending(um => um.Rating).ThenBy(um => um.Movie.Title).First();
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        valid = false;
+                    }
+
+                    if (valid)
+                    {
+                        Console.WriteLine("Top Rated Movie For Occupation: " + occupation.Name);
+                        Console.WriteLine(topRated.Movie.Title);
+                        Console.WriteLine("Rating: " + topRated.Rating);
+                        Console.WriteLine("---------------------");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Top Rated Movie For Occupation: " + occupation.Name);
+                        Console.WriteLine("No ratings yet.");
+                        Console.WriteLine("---------------------");
+                    }
+                    
+                
+                    
+                }
+                
+            }
+
+        }
+        
+
         public void Search(string searchString)
         {
 
@@ -93,6 +241,7 @@ namespace MovieLibrary.Services
                     }
 
                     db.SaveChanges();
+                    log.Info("Movie Added: " + movie.Title);
                 }
             }
         }
@@ -179,11 +328,11 @@ namespace MovieLibrary.Services
                     }
                     db.Movies.Update(movie);
                     db.SaveChanges();
-                    Console.WriteLine("Updates Saved!");
+                    log.Info("Updates Saved!");
                 }
                 else
                 {
-                    Console.WriteLine("Update Not Saved!");
+                    log.Info("Update Not Saved!");
                 }
             }
         }

@@ -8,5 +8,9 @@ namespace MovieLibrary.Services
         void Delete(int movieID);
         void Update(int movieID);
         void Search(string searchString);
+        void DisplayAll();
+        void AddUser();
+        void AddReview(int userID, int movieID);
+        void TopByOccupation();
     }
 }

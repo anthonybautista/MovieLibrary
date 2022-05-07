@@ -15,8 +15,9 @@ namespace MovieLibrary
 
             // Add new lines of code here to register any interfaces and concrete services you create
             services.AddTransient<IMainService, MainService>();
-            services.AddTransient<IRepository, JsonRepository>();
+            //services.AddTransient<IRepository, JsonRepository>();
             services.AddTransient<IController, DbController>();
+            services.AddTransient<IMenu, ProgramMenus>();
 
             return services.BuildServiceProvider();
         }

@@ -23,6 +23,9 @@
       <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0-preview.1.22076.8" />
       <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0-preview.1.22076.8" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="NLog" Version="5.0.0-rc2" />
+      <PackageReference Include="NLog.Config" Version="4.7.15" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0-rc2" />
     </ItemGroup>
 
     <ItemGroup>

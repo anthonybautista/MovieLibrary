@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj": {}
+    "C:\\Users\\Anthony\\RiderProjects\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj": {
+    "C:\\Users\\Anthony\\RiderProjects\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Anthony\\RiderProjects\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
         "projectName": "MovieLibrary",
-        "projectPath": "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
-        "packagesPath": "C:\\Users\\antho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antho\\Desktop\\cs\\MovieLibrary\\MovieLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Anthony\\RiderProjects\\MovieLibrary\\MovieLibrary\\MovieLibrary.csproj",
+        "packagesPath": "C:\\Users\\Anthony\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anthony\\RiderProjects\\MovieLibrary\\MovieLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\antho\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Anthony\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -74,6 +74,18 @@
               "target": "Package",
               "version": "[7.0.0-preview.1.22076.8, )"
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.0-rc2, )"
+            },
+            "NLog.Config": {
+              "target": "Package",
+              "version": "[4.7.15, )"
+            },
+            "NLog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0-rc2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -94,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

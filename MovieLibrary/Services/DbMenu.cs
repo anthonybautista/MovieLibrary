@@ -143,5 +143,115 @@ namespace MovieLibrary.Services
 
             return false;
         }
+        
+        public int AgePrompt()
+        {
+            bool done = false;
+            int age = 0;
+
+            while (!done)
+            {
+                Console.Write("Enter your age: ");
+                age = Convert.ToInt32(Console.ReadLine());
+
+                if (age < 16 || age > 120)
+                {
+                    Console.WriteLine("Invalid Age!");
+                }
+                else
+                {
+                    done = true;
+                }
+            }
+            
+            return age;
+        }
+        
+        public string ZipPrompt()
+        {
+            Console.Write("Enter Zip Code: ");
+            string zip = Console.ReadLine();
+
+            return zip;
+        }
+        
+        public string GenderPrompt()
+        {
+            string gender = "";
+            Console.Write("Enter Gender (press Enter to skip): ");
+            gender = Console.ReadLine();
+
+            return gender;
+        }
+        
+        public string OccupationPrompt()
+        {
+            Console.Write("Enter Occupation: ");
+            string occupation = Console.ReadLine();
+
+            return occupation;
+        }
+        
+        public bool AddUserConfirm(User user)
+        {
+            Console.WriteLine("New User:");
+            Console.WriteLine($"Age: {user.Age}");
+            Console.WriteLine($"Gender: {user.Gender}");
+            Console.WriteLine($"Zip Code: {user.ZipCode}");
+            Console.WriteLine($"Occupation: {user.Occupation.Name}");
+
+            Console.Write("Enter 'yes' to add this user: ");
+            string confirm = Console.ReadLine();
+
+            if (confirm == "yes")
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        public int RatingPrompt()
+        {
+            bool done = false;
+            int rating = 0;
+
+            while (!done)
+            {
+                Console.Write("Enter your rating (1-5): ");
+                rating = Convert.ToInt32(Console.ReadLine());
+
+                if (rating < 1 || rating > 5)
+                {
+                    Console.WriteLine("Invalid Rating!");
+                }
+                else
+                {
+                    done = true;
+                }
+            }
+            
+            return rating;
+        }
+        
+        public bool AddReviewConfirm(UserMovie review)
+        {
+            Console.WriteLine("New Review:");
+            Console.WriteLine($"User ID: {review.User.Id}");
+            Console.WriteLine($"Movie Title: {review.Movie.Title}");
+            Console.WriteLine($"Rating: {review.Rating}");
+            Console.WriteLine($"Reviewed At: {review.RatedAt}");
+
+            Console.Write("Enter 'yes' to add this review: ");
+            string confirm = Console.ReadLine();
+
+            if (confirm == "yes")
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
     }
 }

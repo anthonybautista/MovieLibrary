@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Movies_20049_abautista1@bitsql.wctc.edu">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.38">
+    <root id="1">
+      <Grants>2|||2|connect|G
+3|||2|connect|G
+4|||2|connect|G
+5|||2|connect|G
+0|root||1|connect sql|G
+0|root||1201|connect sql|G
+0|root||2|view any database|G
+0|root||1201|view any database|D
+0|root||2|view server state|G</Grants>
+      <PermissionsCheckSum>11625435489</PermissionsCheckSum>
+      <ServerVersion>13.0.5103</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="master">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@BITSQL2016</Fingerprint>
+      <Grants>1|database||2|connect|G
+1|database||0|view any column encryption key definition|G
+1|database||0|view any column master key definition|G</Grants>
+      <ObjectId>1</ObjectId>
+      <PermissionsCheckSum>3196235028</PermissionsCheckSum>
+    </database>
+    <database id="3" parent="1" name="tempdb">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="4" parent="1" name="NW_Traders_05_AAB">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <ObjectId>1396</ObjectId>
+    </database>
+    <database id="5" parent="1" name="AW_Bikes_05_AAB">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <ObjectId>1456</ObjectId>
+    </database>
+    <database id="6" parent="1" name="Blogs_20049_abautista1">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <ObjectId>1709</ObjectId>
+    </database>
+    <database id="7" parent="1" name="Movies_20049_abautista1">
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <Current>1</Current>
+      <Fingerprint>1714.44654/20A0A3C4-A1BC-423A-A75D-E2BF870D3E05@BITSQL2016</Fingerprint>
+      <Grants>1714|database||1|connect|G
+1714|database||0|view any column encryption key definition|G
+1714|database||0|view any column master key definition|G</Grants>
+      <ObjectId>1714</ObjectId>
+      <PermissionsCheckSum>3196235284</PermissionsCheckSum>
+    </database>
+    <linked-server id="8" parent="1" name="BITSQL2016">
+      <DataSource>BITSQL2016</DataSource>
+      <Product>SQL Server</Product>
+      <ProviderName>SQLNCLI</ProviderName>
+    </linked-server>
+    <login id="9" parent="1" name="sa">
+      <DefaultDatabase>master</DefaultDatabase>
+      <ObjectId>1</ObjectId>
+    </login>
+    <login id="10" parent="1" name="public">
+      <Enabled>1</Enabled>
+      <ObjectId>2</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="11" parent="1" name="sysadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>3</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="12" parent="1" name="securityadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>4</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="13" parent="1" name="serveradmin">
+      <Enabled>1</Enabled>
+      <ObjectId>5</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="14" parent="1" name="setupadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>6</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="15" parent="1" name="processadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>7</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="16" parent="1" name="diskadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>8</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="17" parent="1" name="dbcreator">
+      <Enabled>1</Enabled>
+      <ObjectId>9</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="18" parent="1" name="bulkadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>10</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="19" parent="1" name="abautista1">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>1201</ObjectId>
+    </login>
+    <role id="20" parent="7" name="INFORMATION_SCHEMA">
+      <AuthType>none</AuthType>
+      <ObjectId>3</ObjectId>
+    </role>
+    <role id="21" parent="7" name="db_accessadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16385</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="22" parent="7" name="db_backupoperator">
+      <AuthType>none</AuthType>
+      <ObjectId>16389</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="23" parent="7" name="db_datareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16390</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="24" parent="7" name="db_datawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16391</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="25" parent="7" name="db_ddladmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16387</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="26" parent="7" name="db_denydatareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16392</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="27" parent="7" name="db_denydatawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16393</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="28" parent="7" name="db_owner">
+      <AuthType>none</AuthType>
+      <ObjectId>16384</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="29" parent="7" name="db_securityadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16386</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="30" parent="7" name="dbo">
+      <AuthType>instance</AuthType>
+      <DefaultSchema>dbo</DefaultSchema>
+      <ObjectId>1</ObjectId>
+    </role>
+    <role id="31" parent="7" name="guest">
+      <AuthType>none</AuthType>
+      <DefaultSchema>guest</DefaultSchema>
+      <ObjectId>2</ObjectId>
+    </role>
+    <role id="32" parent="7" name="public">
+      <AuthType>none</AuthType>
+      <ObjectId>0</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="33" parent="7" name="sys">
+      <AuthType>none</AuthType>
+      <ObjectId>4</ObjectId>
+    </role>
+    <schema id="34" parent="7" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="35" parent="7" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="36" parent="7" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="37" parent="7" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="38" parent="7" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="39" parent="7" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="40" parent="7" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="41" parent="7" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="42" parent="7" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="43" parent="7" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="44" parent="7" name="dbo">
+      <Current>1</Current>
+      <IntrospectionTimestamp>2022-05-06.11:41:23.827</IntrospectionTimestamp>
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="45" parent="7" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="46" parent="7" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="47" parent="44" name="Genres">
+      <CreatedTimestamp>2022-04-04.16:33:40.790</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.847</ModifiedTimestamp>
+      <ObjectId>597577167</ObjectId>
+    </table>
+    <table id="48" parent="44" name="MovieGenres">
+      <CreatedTimestamp>2022-04-04.16:33:40.860</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.873</ModifiedTimestamp>
+      <ObjectId>693577509</ObjectId>
+    </table>
+    <table id="49" parent="44" name="Movies">
+      <CreatedTimestamp>2022-04-04.16:33:40.813</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.900</ModifiedTimestamp>
+      <ObjectId>629577281</ObjectId>
+    </table>
+    <table id="50" parent="44" name="Occupations">
+      <CreatedTimestamp>2022-04-04.16:33:40.837</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.973</ModifiedTimestamp>
+      <ObjectId>661577395</ObjectId>
+    </table>
+    <table id="51" parent="44" name="UserMovies">
+      <CreatedTimestamp>2022-04-04.16:33:40.910</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.937</ModifiedTimestamp>
+      <ObjectId>805577908</ObjectId>
+    </table>
+    <table id="52" parent="44" name="Users">
+      <CreatedTimestamp>2022-04-04.16:33:40.887</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.970</ModifiedTimestamp>
+      <ObjectId>757577737</ObjectId>
+    </table>
+    <table id="53" parent="44" name="__EFMigrationsHistory">
+      <CreatedTimestamp>2022-04-04.16:33:40.340</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.340</ModifiedTimestamp>
+      <ObjectId>565577053</ObjectId>
+    </table>
+    <column id="54" parent="47" name="Id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(19)</SequenceIdentity>
+    </column>
+    <column id="55" parent="47" name="Name">
+      <DataType>nvarchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredDefaultExpression>N&apos;&apos;</StoredDefaultExpression>
+      <DefaultConstraintId>1029578706</DefaultConstraintId>
+      <DefaultConstraintName>DF__Genres__Name__3D5E1FD2</DefaultConstraintName>
+    </column>
+    <default id="56" parent="47" name="DF__Genres__Name__3D5E1FD2">
+      <ColNames>Name</ColNames>
+      <DefaultExpression>N&apos;&apos;</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.827</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>1029578706</ObjectId>
+    </default>
+    <index id="57" parent="47" name="PK_Genres">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="58" parent="47" name="PK_Genres">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.790</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.790</ModifiedTimestamp>
+      <ObjectId>613577224</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Genres</UnderlyingIndexName>
+    </key>
+    <column id="59" parent="48" name="Id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(2896)</SequenceIdentity>
+    </column>
+    <column id="60" parent="48" name="MovieId">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredDefaultExpression>CONVERT([bigint],0)</StoredDefaultExpression>
+      <DefaultConstraintId>997578592</DefaultConstraintId>
+      <DefaultConstraintName>DF__MovieGenr__Movie__3B75D760</DefaultConstraintName>
+    </column>
+    <column id="61" parent="48" name="GenreId">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredDefaultExpression>CONVERT([bigint],0)</StoredDefaultExpression>
+      <DefaultConstraintId>1013578649</DefaultConstraintId>
+      <DefaultConstraintName>DF__MovieGenr__Genre__3C69FB99</DefaultConstraintName>
+    </column>
+    <default id="62" parent="48" name="DF__MovieGenr__Movie__3B75D760">
+      <ColNames>MovieId</ColNames>
+      <DefaultExpression>CONVERT([bigint],0)</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.740</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>997578592</ObjectId>
+    </default>
+    <default id="63" parent="48" name="DF__MovieGenr__Genre__3C69FB99">
+      <ColNames>GenreId</ColNames>
+      <DefaultExpression>CONVERT([bigint],0)</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.783</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>1013578649</ObjectId>
+    </default>
+    <foreign-key id="64" parent="48" name="FK_MovieGenres_Movies_MovieId">
+      <ColNames>MovieId</ColNames>
+      <CreatedTimestamp>2022-05-02.14:47:53.873</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.873</ModifiedTimestamp>
+      <ObjectId>1061578820</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Movies</RefKeyName>
+      <RefTableId>629577281</RefTableId>
+      <RefTableName>Movies</RefTableName>
+    </foreign-key>
+    <foreign-key id="65" parent="48" name="FK_MovieGenres_Genres_GenreId">
+      <ColNames>GenreId</ColNames>
+      <CreatedTimestamp>2022-05-02.14:47:53.847</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.847</ModifiedTimestamp>
+      <ObjectId>1045578763</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Genres</RefKeyName>
+      <RefTableId>597577167</RefTableId>
+      <RefTableName>Genres</RefTableName>
+    </foreign-key>
+    <index id="66" parent="48" name="PK_MovieGenres">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <index id="67" parent="48" name="IX_MovieGenres_GenreId">
+      <ColNames>GenreId</ColNames>
+      <Position>2</Position>
+    </index>
+    <index id="68" parent="48" name="IX_MovieGenres_MovieId">
+      <ColNames>MovieId</ColNames>
+      <Position>3</Position>
+    </index>
+    <key id="69" parent="48" name="PK_MovieGenres">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.860</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.860</ModifiedTimestamp>
+      <ObjectId>709577566</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_MovieGenres</UnderlyingIndexName>
+    </key>
+    <column id="70" parent="49" name="Id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(1685)</SequenceIdentity>
+    </column>
+    <column id="71" parent="49" name="Title">
+      <DataType>nvarchar(150 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredDefaultExpression>N&apos;&apos;</StoredDefaultExpression>
+      <DefaultConstraintId>981578535</DefaultConstraintId>
+      <DefaultConstraintName>DF__Movies__Title__3A81B327</DefaultConstraintName>
+    </column>
+    <column id="72" parent="49" name="ReleaseDate">
+      <DataType>datetime2|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <default id="73" parent="49" name="DF__Movies__Title__3A81B327">
+      <ColNames>Title</ColNames>
+      <DefaultExpression>N&apos;&apos;</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.693</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>981578535</ObjectId>
+    </default>
+    <index id="74" parent="49" name="PK_Movies">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="49" name="PK_Movies">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.813</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.813</ModifiedTimestamp>
+      <ObjectId>645577338</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Movies</UnderlyingIndexName>
+    </key>
+    <column id="76" parent="50" name="Id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(22)</SequenceIdentity>
+    </column>
+    <column id="77" parent="50" name="Name">
+      <DataType>nvarchar(30 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredDefaultExpression>N&apos;&apos;</StoredDefaultExpression>
+      <DefaultConstraintId>965578478</DefaultConstraintId>
+      <DefaultConstraintName>DF__Occupation__Name__398D8EEE</DefaultConstraintName>
+    </column>
+    <default id="78" parent="50" name="DF__Occupation__Name__398D8EEE">
+      <ColNames>Name</ColNames>
+      <DefaultExpression>N&apos;&apos;</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.653</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>965578478</ObjectId>
+    </default>
+    <index id="79" parent="50" name="PK_Occupations">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="50" name="PK_Occupations">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.837</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.837</ModifiedTimestamp>
+      <ObjectId>677577452</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Occupations</UnderlyingIndexName>
+    </key>
+    <column id="81" parent="51" name="Id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(100001)</SequenceIdentity>
+    </column>
+    <column id="82" parent="51" name="Rating">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="83" parent="51" name="RatedAt">
+      <DataType>datetime2|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="84" parent="51" name="UserId">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredDefaultExpression>CONVERT([bigint],0)</StoredDefaultExpression>
+      <DefaultConstraintId>933578364</DefaultConstraintId>
+      <DefaultConstraintName>DF__UserMovie__UserI__37A5467C</DefaultConstraintName>
+    </column>
+    <column id="85" parent="51" name="MovieId">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredDefaultExpression>CONVERT([bigint],0)</StoredDefaultExpression>
+      <DefaultConstraintId>949578421</DefaultConstraintId>
+      <DefaultConstraintName>DF__UserMovie__Movie__38996AB5</DefaultConstraintName>
+    </column>
+    <default id="86" parent="51" name="DF__UserMovie__UserI__37A5467C">
+      <ColNames>UserId</ColNames>
+      <DefaultExpression>CONVERT([bigint],0)</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.340</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>933578364</ObjectId>
+    </default>
+    <default id="87" parent="51" name="DF__UserMovie__Movie__38996AB5">
+      <ColNames>MovieId</ColNames>
+      <DefaultExpression>CONVERT([bigint],0)</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:53.527</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>949578421</ObjectId>
+    </default>
+    <foreign-key id="88" parent="51" name="FK_UserMovies_Users_UserId">
+      <ColNames>UserId</ColNames>
+      <CreatedTimestamp>2022-05-02.14:47:53.937</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.937</ModifiedTimestamp>
+      <ObjectId>1093578934</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Users</RefKeyName>
+      <RefTableId>757577737</RefTableId>
+      <RefTableName>Users</RefTableName>
+    </foreign-key>
+    <foreign-key id="89" parent="51" name="FK_UserMovies_Movies_MovieId">
+      <ColNames>MovieId</ColNames>
+      <CreatedTimestamp>2022-05-02.14:47:53.900</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.900</ModifiedTimestamp>
+      <ObjectId>1077578877</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Movies</RefKeyName>
+      <RefTableId>629577281</RefTableId>
+      <RefTableName>Movies</RefTableName>
+    </foreign-key>
+    <index id="90" parent="51" name="PK_UserMovies">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <index id="91" parent="51" name="IX_UserMovies_MovieId">
+      <ColNames>MovieId</ColNames>
+      <Position>2</Position>
+    </index>
+    <index id="92" parent="51" name="IX_UserMovies_UserId">
+      <ColNames>UserId</ColNames>
+      <Position>3</Position>
+    </index>
+    <key id="93" parent="51" name="PK_UserMovies">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.910</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.910</ModifiedTimestamp>
+      <ObjectId>821577965</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_UserMovies</UnderlyingIndexName>
+    </key>
+    <column id="94" parent="52" name="Id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>1(944)</SequenceIdentity>
+    </column>
+    <column id="95" parent="52" name="Age">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="96" parent="52" name="Gender">
+      <DataType>nvarchar(max)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredDefaultExpression>N&apos;&apos;</StoredDefaultExpression>
+      <DefaultConstraintId>917578307</DefaultConstraintId>
+      <DefaultConstraintName>DF__Users__Gender__36B12243</DefaultConstraintName>
+    </column>
+    <column id="97" parent="52" name="ZipCode">
+      <DataType>nvarchar(max)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredDefaultExpression>N&apos;&apos;</StoredDefaultExpression>
+      <DefaultConstraintId>885578193</DefaultConstraintId>
+      <DefaultConstraintName>DF__Users__ZipCode__34C8D9D1</DefaultConstraintName>
+    </column>
+    <column id="98" parent="52" name="OccupationId">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredDefaultExpression>CONVERT([bigint],0)</StoredDefaultExpression>
+      <DefaultConstraintId>901578250</DefaultConstraintId>
+      <DefaultConstraintName>DF__Users__Occupatio__35BCFE0A</DefaultConstraintName>
+    </column>
+    <default id="99" parent="52" name="DF__Users__Gender__36B12243">
+      <ColNames>Gender</ColNames>
+      <DefaultExpression>N&apos;&apos;</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:47.923</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>917578307</ObjectId>
+    </default>
+    <default id="100" parent="52" name="DF__Users__ZipCode__34C8D9D1">
+      <ColNames>ZipCode</ColNames>
+      <DefaultExpression>N&apos;&apos;</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:47.827</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>885578193</ObjectId>
+    </default>
+    <default id="101" parent="52" name="DF__Users__Occupatio__35BCFE0A">
+      <ColNames>OccupationId</ColNames>
+      <DefaultExpression>CONVERT([bigint],0)</DefaultExpression>
+      <ModifiedTimestamp>2022-05-02.14:47:47.870</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>901578250</ObjectId>
+    </default>
+    <foreign-key id="102" parent="52" name="FK_Users_Occupations_OccupationId">
+      <ColNames>OccupationId</ColNames>
+      <CreatedTimestamp>2022-05-02.14:47:53.970</CreatedTimestamp>
+      <ModifiedTimestamp>2022-05-02.14:47:53.970</ModifiedTimestamp>
+      <ObjectId>1109578991</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Occupations</RefKeyName>
+      <RefTableId>661577395</RefTableId>
+      <RefTableName>Occupations</RefTableName>
+    </foreign-key>
+    <index id="103" parent="52" name="PK_Users">
+      <Clustering>1</Clustering>
+      <ColNames>Id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <index id="104" parent="52" name="IX_Users_OccupationId">
+      <ColNames>OccupationId</ColNames>
+      <Position>2</Position>
+    </index>
+    <key id="105" parent="52" name="PK_Users">
+      <ColNames>Id</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.887</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.887</ModifiedTimestamp>
+      <ObjectId>773577794</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_Users</UnderlyingIndexName>
+    </key>
+    <column id="106" parent="53" name="MigrationId">
+      <DataType>nvarchar(150 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="107" parent="53" name="ProductVersion">
+      <DataType>nvarchar(32 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="108" parent="53" name="PK___EFMigrationsHistory">
+      <Clustering>1</Clustering>
+      <ColNames>MigrationId</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="109" parent="53" name="PK___EFMigrationsHistory">
+      <ColNames>MigrationId</ColNames>
+      <CreatedTimestamp>2022-04-04.16:33:40.390</CreatedTimestamp>
+      <ModifiedTimestamp>2022-04-04.16:33:40.390</ModifiedTimestamp>
+      <ObjectId>581577110</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK___EFMigrationsHistory</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
